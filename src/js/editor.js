@@ -66,11 +66,11 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 					createElement(
 						PanelBody,
 						{
-							title: __('Animations', 'filpack'),
+							title: __('Animations', 'animate_gut_blocks'),
 							initialOpen: true,
 						},
 						createElement(ToggleControl, {
-							label: __('Animer le bloc', 'filpack'),
+							label: __('Animer le bloc', 'animate_gut_blocks'),
 							checked: isAnimated,
 							onChange: (value) => {
 								setAttributes({ isAnimated: value });
@@ -78,14 +78,14 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 						}),
 						isAnimated &&
 							createElement(SelectControl, {
-								label: __("Type d'animation", 'filpack'),
+								label: __("Type d'animation", 'animate_gut_blocks'),
 								value: animationType,
 								options: [
-									{ label: __('Fondu', 'filpack'), value: 'fade-in' },
-									{ label: __('Fondu - Bas vers haut', 'filpack'), value: 'fade-in-up' },
-									{ label: __('Fondu - Haut vers bas', 'filpack'), value: 'fade-in-down' },
-									{ label: __('Fondu - Gauche vers droite', 'filpack'), value: 'fade-in-left' },
-									{ label: __('Fondu - Droite vers gauche', 'filpack'), value: 'fade-in-right' },
+									{ label: __('Fondu', 'animate_gut_blocks'), value: 'fade-in' },
+									{ label: __('Fondu - Bas vers haut', 'animate_gut_blocks'), value: 'fade-in-up' },
+									{ label: __('Fondu - Haut vers bas', 'animate_gut_blocks'), value: 'fade-in-down' },
+									{ label: __('Fondu - Gauche vers droite', 'animate_gut_blocks'), value: 'fade-in-left' },
+									{ label: __('Fondu - Droite vers gauche', 'animate_gut_blocks'), value: 'fade-in-right' },
 								],
 								onChange: (value) => {
 									setAttributes({ animationType: value });
@@ -93,7 +93,7 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 							}),
 						isAnimated &&
 							createElement(RangeControl, {
-								label: __("Durée de l'animation", 'filpack'),
+								label: __("Durée de l'animation", 'animate_gut_blocks'),
 								value: animationDuration,
 								onChange: (value) => {
 									setAttributes({ animationDuration: value });
@@ -101,11 +101,11 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 								min: 0.2,
 								max: 2,
 								step: 0.1,
-								help: __('Durée en secondes', 'filpack'),
+								help: __('Durée en secondes', 'animate_gut_blocks'),
 							}),
 						isAnimated &&
 							createElement(RangeControl, {
-								label: __("Délai de l'animation", 'filpack'),
+								label: __("Délai de l'animation", 'animate_gut_blocks'),
 								value: animationDelay,
 								onChange: (value) => {
 									setAttributes({ animationDelay: value });
@@ -113,7 +113,7 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 								min: 0,
 								max: 1,
 								step: 0.1,
-								help: __('Durée en secondes', 'filpack'),
+								help: __('Durée en secondes', 'animate_gut_blocks'),
 							})
 					)
 				)
@@ -150,7 +150,7 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 	}
 
 	// Apply filters
-	addFilter('blocks.registerBlockType', 'filpack/animation-attributes', addAnimationAttributes);
-	addFilter('editor.BlockEdit', 'filpack/with-animation-controls', withAnimationControls);
-	addFilter('blocks.getSaveContent.extraProps', 'filpack/add-animation-classes', addAnimationClasses);
+	addFilter('blocks.registerBlockType', 'animate_gut_blocks/animation-attributes', addAnimationAttributes);
+	addFilter('editor.BlockEdit', 'animate_gut_blocks/with-animation-controls', withAnimationControls);
+	addFilter('blocks.getSaveContent.extraProps', 'animate_gut_blocks/add-animation-classes', addAnimationClasses);
 }

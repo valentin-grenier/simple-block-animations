@@ -45,7 +45,7 @@ class AGB_Settings {
 	 */
 	public static function register_settings() {
 		register_setting(
-			'filpack_animations_settings_group',
+			'animate_gut_blocks_settings_group',
 			self::OPTION_NAME,
 			array(
 				'type'              => 'array',
@@ -55,7 +55,7 @@ class AGB_Settings {
 		);
 
 		add_settings_section(
-			'filpack_animations_main',
+			'animate_gut_blocks_main',
 			__( 'Configuration générale', 'animate-gut-blocks' ),
 			array( __CLASS__, 'render_main_section' ),
 			'animate-gut-blocks'
@@ -66,7 +66,7 @@ class AGB_Settings {
 			__( 'Types de blocs supportés', 'animate-gut-blocks' ),
 			array( __CLASS__, 'render_block_types_field' ),
 			'animate-gut-blocks',
-			'filpack_animations_main'
+			'animate_gut_blocks_main'
 		);
 
 		add_settings_field(
@@ -74,7 +74,7 @@ class AGB_Settings {
 			__( 'Durée par défaut', 'animate-gut-blocks' ),
 			array( __CLASS__, 'render_default_duration_field' ),
 			'animate-gut-blocks',
-			'filpack_animations_main'
+			'animate_gut_blocks_main'
 		);
 	}
 
@@ -129,7 +129,7 @@ class AGB_Settings {
 			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 			<form action="options.php" method="post">
 				<?php
-				settings_fields( 'filpack_animations_settings_group' );
+				settings_fields( 'animate_gut_blocks_settings_group' );
 				do_settings_sections( 'animate-gut-blocks' );
 				submit_button();
 				?>
