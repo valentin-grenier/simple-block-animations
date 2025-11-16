@@ -8,135 +8,64 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Easily add smooth scroll animations to your Gutenberg blocks without writing a single line of code.
+Add beautiful scroll-triggered animations to any Gutenberg block with a simple, lightweight solution.
 
 == Description ==
 
-Animate Blocks is a lightweight WordPress plugin that brings your Gutenberg editor to life by adding beautiful scroll-triggered animations to any block. Perfect for creating engaging, modern websites with minimal effort.
+Animate Gut Blocks adds scroll-triggered animations to WordPress Gutenberg blocks without any coding required.
 
-= Key Features =
+**Features:**
 
-* **No Coding Required** - Add animations directly from the block inspector panel
-* **Multiple Animation Types** - Choose from fade-in, slide-up, slide-down, slide-left, and slide-right effects
-* **Customizable Settings** - Control animation duration and delay for each block
-* **Scroll Trigger** - Animations activate when blocks enter the viewport
-* **Performance Optimized** - Lightweight JavaScript with Intersection Observer API
-* **Works with Core Blocks** - Compatible with all WordPress core blocks
-* **Block-Level Control** - Enable/disable animations per block
+* 5 animation types (fade, slide up/down/left/right)
+* Customizable duration and delay
+* Works with all core blocks
+* Lightweight (CSS + Intersection Observer)
+* No jQuery or heavy libraries
+* Accessibility-friendly (respects prefers-reduced-motion)
 
-= Supported Animation Types =
+**Supported Blocks:**
 
-* Fade In
-* Fade In Up (slide from bottom)
-* Fade In Down (slide from top)
-* Fade In Left (slide from left)
-* Fade In Right (slide from right)
-
-= How It Works =
-
-1. Edit any Gutenberg block in the editor
-2. Open the block settings panel (right sidebar)
-3. Enable the animation toggle
-4. Choose your preferred animation type
-5. Adjust duration and delay (optional)
-6. Publish and watch your blocks come to life!
-
-The plugin uses the modern Intersection Observer API to detect when blocks enter the viewport, ensuring smooth performance even on content-heavy pages.
-
-= Perfect For =
-
-* Landing pages
-* Portfolio websites
-* Marketing sites
-* Blog posts with visual flair
-* Any site that wants to add subtle motion
+Works with all WordPress core blocks and Meta Box blocks.
 
 == Installation ==
 
-= Automatic Installation =
-
-1. Log in to your WordPress admin panel
-2. Navigate to Plugins > Add New
-3. Search for "Animate Blocks"
-4. Click "Install Now" and then "Activate"
-
-= Manual Installation =
-
-1. Download the plugin ZIP file
-2. Log in to your WordPress admin panel
-3. Navigate to Plugins > Add New > Upload Plugin
-4. Choose the downloaded ZIP file and click "Install Now"
-5. Activate the plugin
-
-= After Activation =
-
-1. Go to Settings > Block Animations to configure default options
-2. Edit any post or page with the Gutenberg editor
-3. Select a block and enable animations from the block settings panel
+1. Upload the plugin files to `/wp-content/plugins/animate-gut-blocks/`
+2. Activate the plugin through the 'Plugins' screen in WordPress
+3. Select any block in Gutenberg
+4. Open the block settings panel
+5. Find the "Animations" section
+6. Enable animation and customize
 
 == Frequently Asked Questions ==
 
-= Does this plugin work with all blocks? =
+= Does it work with any theme? =
 
-The plugin currently supports all WordPress core blocks and Meta Box blocks. Support for third-party block plugins may vary.
+Yes! The plugin works with any WordPress theme that supports Gutenberg.
 
-= Will this slow down my website? =
+= Does it slow down my site? =
 
-No! The plugin is optimized for performance. It uses the native Intersection Observer API and only loads minimal JavaScript and CSS on the frontend.
+No. The plugin uses native CSS animations and Intersection Observer API. Assets only load on pages with animated blocks.
 
-= Can I customize the animation timing? =
+= Can I use it with page builders? =
 
-Yes! Each block has individual controls for animation duration (0.2-2 seconds) and delay (0-1 second).
-
-= Do animations work on mobile devices? =
-
-Yes! Animations work smoothly across all devices and screen sizes.
-
-= Can I disable animations on specific blocks? =
-
-Absolutely! Simply toggle off the animation option in the block settings panel for any block you don't want to animate.
-
-= Is this compatible with my theme? =
-
-Yes! The plugin works with any properly coded WordPress theme that supports the block editor.
+It's designed for Gutenberg blocks. It won't work with Elementor, Divi, or other page builders.
 
 == Screenshots ==
 
-1. Block animation settings panel in the editor
-2. Animation type selection
+1. Animation controls in the block inspector
+2. Animation type selector
 3. Duration and delay controls
-4. Plugin settings page
-5. Live animation preview on frontend
+4. Example of fade-in animation
 
 == Changelog ==
 
 = 1.0.0 =
 * Initial release
-* Support for 5 animation types
-* Block-level animation controls
-* Customizable duration and delay
-* Settings page for default configuration
-* Intersection Observer for scroll detection
+* 5 animation types
+* Duration and delay controls
+* Support for core and Meta Box blocks
 
 == Upgrade Notice ==
 
 = 1.0.0 =
-Initial release of Animate Blocks. Add beautiful scroll animations to your Gutenberg blocks!
-
-== Developer Notes ==
-
-= Technical Details =
-
-* Uses WordPress hooks and filters for block modification
-* Leverages the Intersection Observer API for efficient scroll detection
-* Adds data attributes to animated blocks for JavaScript targeting
-* CSS animations with GPU acceleration for smooth performance
-* Compatible with WordPress 5.8 and higher
-
-= GitHub =
-
-Development and issue tracking: https://github.com/valentin-grenier/animate-gut-blocks
-
-== Credits ==
-
-Developed by Valentin Grenier - Studio Val
+Initial release.
