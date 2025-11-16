@@ -32,7 +32,8 @@ class AGB_Enqueue {
 			AGB_URL . 'build/editor.js',
 			array(
 				'wp-blocks',
-				'wp-dom'
+				'wp-dom',
+				'wp-i18n'
 			),
 			AGB_VERSION,
 			true

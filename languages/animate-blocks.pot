@@ -1,0 +1,96 @@
+# Copyright (C) 2025 Valentin Grenier
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Animate Gut Blocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/animate-gut-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-11-16T23:06:34+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: animate-gut-blocks\n"
+
+#. Plugin Name of the plugin
+#: animate-gut-blocks.php
+msgid "Animate Gut Blocks"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: animate-gut-blocks.php
+msgid "https://github.com/valentin-grenier/animate-gut-blocks"
+msgstr ""
+
+#. Description of the plugin
+#: animate-gut-blocks.php
+msgid "Easily add animations to your Gutenberg blocks without coding."
+msgstr ""
+
+#. Author of the plugin
+#: animate-gut-blocks.php
+msgid "Valentin Grenier"
+msgstr ""
+
+#. Author URI of the plugin
+#: animate-gut-blocks.php
+msgid "https://www.linkedin.com/in/valentin-grenier/"
+msgstr ""
+
+#: includes/class-blocks.php:69
+msgid "Fondu"
+msgstr ""
+
+#: includes/class-blocks.php:70
+msgid "Fondu - Bas vers haut"
+msgstr ""
+
+#: includes/class-blocks.php:71
+msgid "Fondu - Haut vers bas"
+msgstr ""
+
+#: includes/class-blocks.php:72
+msgid "Fondu - Gauche vers droite"
+msgstr ""
+
+#: includes/class-blocks.php:73
+msgid "Fondu - Droite vers gauche"
+msgstr ""
+
+#: includes/class-settings.php:35
+msgid "Block Animations Settings"
+msgstr ""
+
+#: includes/class-settings.php:36
+msgid "Block Animations"
+msgstr ""
+
+#: includes/class-settings.php:59
+msgid "Configuration générale"
+msgstr ""
+
+#: includes/class-settings.php:66
+msgid "Types de blocs supportés"
+msgstr ""
+
+#: includes/class-settings.php:74
+msgid "Durée par défaut"
+msgstr ""
+
+#: includes/class-settings.php:145
+msgid "Configurez les options par défaut pour les animations de blocs."
+msgstr ""
+
+#: includes/class-settings.php:157
+msgid "Blocs WordPress Core"
+msgstr ""
+
+#: includes/class-settings.php:161
+msgid "Blocs Meta Box"
+msgstr ""
+
+#: includes/class-settings.php:174
+msgid "Durée par défaut des animations en secondes (0.2 - 2)"
+msgstr ""

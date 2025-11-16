@@ -7,7 +7,8 @@
 		"dev": "webpack --mode development --watch",
 		"lint:js": "eslint src/js",
 		"lint:css": "stylelint 'src/scss/**/*.scss'",
-		"format": "prettier --write 'src/**/*.{js,scss}'"
+		"format": "prettier --write 'src/**/*.{js,scss}'",
+		"i18n": "wp i18n make-pot . languages/animate-blocks.pot --exclude=node_modules,vendor,build,tests"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^27.0.0",
