@@ -31,13 +31,6 @@ Animate Gut Blocks is perfect for creating engaging, modern websites with minima
 
 ## Installation
 
-### From WordPress.org
-
-1. Log in to your WordPress admin panel
-2. Navigate to **Plugins > Add New**
-3. Search for "Animate Gut Blocks"
-4. Click "Install Now" and then "Activate"
-
 ### Manual Installation
 
 1. Download the plugin ZIP file
