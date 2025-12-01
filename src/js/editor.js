@@ -7,8 +7,8 @@ import { PanelBody, ToggleControl, SelectControl, RangeControl } from '@wordpres
 import '../scss/editor.scss';
 
 // Prevent multiple executions
-if (!window.animateGutBlocksAttributesFiltersAdded) {
-	window.animateGutBlocksAttributesFiltersAdded = true;
+if (!window.simpleAnimationsForGutenbergAttributesFiltersAdded) {
+	window.simpleAnimationsForGutenbergAttributesFiltersAdded = true;
 
 	/**
 	 * Add animation attributes to all blocks starting with "core/"
@@ -66,11 +66,11 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 					createElement(
 						PanelBody,
 						{
-							title: __('Animations', 'animate_gut_blocks'),
+							title: __('Animations', 'simple_animations_for_gutenberg'),
 							initialOpen: true,
 						},
 						createElement(ToggleControl, {
-							label: __('Animer le bloc', 'animate_gut_blocks'),
+							label: __('Animer le bloc', 'simple_animations_for_gutenberg'),
 							checked: isAnimated,
 							onChange: (value) => {
 								setAttributes({ isAnimated: value });
@@ -78,14 +78,14 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 						}),
 						isAnimated &&
 							createElement(SelectControl, {
-								label: __("Type d'animation", 'animate_gut_blocks'),
+								label: __("Type d'animation", 'simple_animations_for_gutenberg'),
 								value: animationType,
 								options: [
-									{ label: __('Fondu', 'animate_gut_blocks'), value: 'fade-in' },
-									{ label: __('Fondu - Bas vers haut', 'animate_gut_blocks'), value: 'fade-in-up' },
-									{ label: __('Fondu - Haut vers bas', 'animate_gut_blocks'), value: 'fade-in-down' },
-									{ label: __('Fondu - Gauche vers droite', 'animate_gut_blocks'), value: 'fade-in-left' },
-									{ label: __('Fondu - Droite vers gauche', 'animate_gut_blocks'), value: 'fade-in-right' },
+									{ label: __('Fondu', 'simple_animations_for_gutenberg'), value: 'fade-in' },
+									{ label: __('Fondu - Bas vers haut', 'simple_animations_for_gutenberg'), value: 'fade-in-up' },
+									{ label: __('Fondu - Haut vers bas', 'simple_animations_for_gutenberg'), value: 'fade-in-down' },
+									{ label: __('Fondu - Gauche vers droite', 'simple_animations_for_gutenberg'), value: 'fade-in-left' },
+									{ label: __('Fondu - Droite vers gauche', 'simple_animations_for_gutenberg'), value: 'fade-in-right' },
 								],
 								onChange: (value) => {
 									setAttributes({ animationType: value });
@@ -93,7 +93,7 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 							}),
 						isAnimated &&
 							createElement(RangeControl, {
-								label: __("Durée de l'animation", 'animate_gut_blocks'),
+								label: __("Durée de l'animation", 'simple_animations_for_gutenberg'),
 								value: animationDuration,
 								onChange: (value) => {
 									setAttributes({ animationDuration: value });
@@ -101,11 +101,11 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 								min: 0.2,
 								max: 2,
 								step: 0.1,
-								help: __('Durée en secondes', 'animate_gut_blocks'),
+								help: __('Durée en secondes', 'simple_animations_for_gutenberg'),
 							}),
 						isAnimated &&
 							createElement(RangeControl, {
-								label: __("Délai de l'animation", 'animate_gut_blocks'),
+								label: __("Délai de l'animation", 'simple_animations_for_gutenberg'),
 								value: animationDelay,
 								onChange: (value) => {
 									setAttributes({ animationDelay: value });
@@ -113,7 +113,7 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 								min: 0,
 								max: 1,
 								step: 0.1,
-								help: __('Durée en secondes', 'animate_gut_blocks'),
+								help: __('Durée en secondes', 'simple_animations_for_gutenberg'),
 							})
 					)
 				)
@@ -150,7 +150,7 @@ if (!window.animateGutBlocksAttributesFiltersAdded) {
 	}
 
 	// Apply filters
-	addFilter('blocks.registerBlockType', 'animate_gut_blocks/animation-attributes', addAnimationAttributes);
-	addFilter('editor.BlockEdit', 'animate_gut_blocks/with-animation-controls', withAnimationControls);
-	addFilter('blocks.getSaveContent.extraProps', 'animate_gut_blocks/add-animation-classes', addAnimationClasses);
+	addFilter('blocks.registerBlockType', 'simple_animations_for_gutenberg/animation-attributes', addAnimationAttributes);
+	addFilter('editor.BlockEdit', 'simple_animations_for_gutenberg/with-animation-controls', withAnimationControls);
+	addFilter('blocks.getSaveContent.extraProps', 'simple_animations_for_gutenberg/add-animation-classes', addAnimationClasses);
 }

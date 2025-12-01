@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Handles enqueueing of editor and frontend assets
  */
-class AGB_Enqueue {
+class SAFG_Enqueue {
 
 	/**
 	 * Initialize hooks
@@ -28,30 +28,30 @@ class AGB_Enqueue {
 	public static function enqueue_editor_assets() {
 		// Editor JS
 		wp_enqueue_script(
-			'animate-gut-blocks-editor',
-			AGB_URL . 'build/editor.js',
+			'simple-animations-for-gutenberg-editor',
+			SAFG_URL . 'build/editor.js',
 			array(
 				'wp-blocks',
 				'wp-dom',
 				'wp-i18n'
 			),
-			AGB_VERSION,
+			SAFG_VERSION,
 			true
 		);
 
 		// Editor CSS
 		wp_enqueue_style(
-			'animate-gut-blocks-editor',
-			AGB_URL . 'build/editor.css',
+			'simple-animations-for-gutenberg-editor',
+			SAFG_URL . 'build/editor.css',
 			array( 'wp-edit-blocks' ),
-			AGB_VERSION
+			SAFG_VERSION
 		);
 
 		// Set script translations
 		wp_set_script_translations(
-			'animate-gut-blocks-editor',
-			'animate-gut-blocks',
-			AGB_PATH . 'languages'
+			'simple-animations-for-gutenberg-editor',
+			'simple-animations-for-gutenberg',
+			SAFG_PATH . 'languages'
 		);
 	}
 
@@ -66,19 +66,19 @@ class AGB_Enqueue {
 
 		// Frontend JS (Intersection Observer)
 		wp_enqueue_script(
-			'animate-gut-blocks-frontend',
-			AGB_URL . 'build/frontend.js',
+			'simple-animations-for-gutenberg-frontend',
+			SAFG_URL . 'build/frontend.js',
 			array(),
-			AGB_VERSION,
+			SAFG_VERSION,
 			true
 		);
 
 		// Frontend CSS (animations)
 		wp_enqueue_style(
-			'animate-gut-blocks-frontend',
-			AGB_URL . 'build/frontend.css',
+			'simple-animations-for-gutenberg-frontend',
+			SAFG_URL . 'build/frontend.css',
 			array(),
-			AGB_VERSION
+			SAFG_VERSION
 		);
 	}
 

@@ -2,8 +2,8 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Animate Gut Blocks 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/animate-gut-blocks\n"
+"Project-Id-Version: Simple Animations For Gutenberg 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-animations-for-gutenberg\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,30 +12,30 @@ msgstr ""
 "POT-Creation-Date: 2025-11-16T23:06:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
-"X-Domain: animate-gut-blocks\n"
+"X-Domain: simple-animations-for-gutenberg\n"
 
 #. Plugin Name of the plugin
-#: animate-gut-blocks.php
-msgid "Animate Gut Blocks"
+#: simple-animations-for-gutenberg.php
+msgid "Simple Animations For Gutenberg"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: animate-gut-blocks.php
-msgid "https://github.com/valentin-grenier/animate-gut-blocks"
+#: simple-animations-for-gutenberg.php
+msgid "https://github.com/valentin-grenier/simple-animations-for-gutenberg"
 msgstr ""
 
 #. Description of the plugin
-#: animate-gut-blocks.php
+#: simple-animations-for-gutenberg.php
 msgid "Easily add animations to your Gutenberg blocks without coding."
 msgstr ""
 
 #. Author of the plugin
-#: animate-gut-blocks.php
+#: simple-animations-for-gutenberg.php
 msgid "Valentin Grenier"
 msgstr ""
 
 #. Author URI of the plugin
-#: animate-gut-blocks.php
+#: simple-animations-for-gutenberg.php
 msgid "https://www.linkedin.com/in/valentin-grenier/"
 msgstr ""
 

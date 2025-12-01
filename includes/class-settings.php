@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Handles plugin settings and options page
  */
-class AGB_Settings {
+class SAFG_Settings {
 
 	/**
 	 * Option name in database
@@ -32,10 +32,10 @@ class AGB_Settings {
 	 */
 	public static function add_settings_page() {
 		add_options_page(
-			__( 'Block Animations Settings', 'animate-gut-blocks' ),
-			__( 'Block Animations', 'animate-gut-blocks' ),
+			__( 'Block Animations Settings', 'simple-animations-for-gutenberg' ),
+			__( 'Block Animations', 'simple-animations-for-gutenberg' ),
 			'manage_options',
-			'animate-gut-blocks',
+			'simple-animations-for-gutenberg',
 			array( __CLASS__, 'render_settings_page' )
 		);
 	}
@@ -45,7 +45,7 @@ class AGB_Settings {
 	 */
 	public static function register_settings() {
 		register_setting(
-			'animate_gut_blocks_settings_group',
+			'simple_animations_for_gutenberg_settings_group',
 			self::OPTION_NAME,
 			array(
 				'type'              => 'array',
@@ -55,26 +55,26 @@ class AGB_Settings {
 		);
 
 		add_settings_section(
-			'animate_gut_blocks_main',
-			__( 'Configuration générale', 'animate-gut-blocks' ),
+			'simple_animations_for_gutenberg_main',
+			__( 'Configuration générale', 'simple-animations-for-gutenberg' ),
 			array( __CLASS__, 'render_main_section' ),
-			'animate-gut-blocks'
+			'simple-animations-for-gutenberg'
 		);
 
 		add_settings_field(
 			'enabled_block_types',
-			__( 'Types de blocs supportés', 'animate-gut-blocks' ),
+			__( 'Types de blocs supportés', 'simple-animations-for-gutenberg' ),
 			array( __CLASS__, 'render_block_types_field' ),
-			'animate-gut-blocks',
-			'animate_gut_blocks_main'
+			'simple-animations-for-gutenberg',
+			'simple_animations_for_gutenberg_main'
 		);
 
 		add_settings_field(
 			'default_duration',
-			__( 'Durée par défaut', 'animate-gut-blocks' ),
+			__( 'Durée par défaut', 'simple-animations-for-gutenberg' ),
 			array( __CLASS__, 'render_default_duration_field' ),
-			'animate-gut-blocks',
-			'animate_gut_blocks_main'
+			'simple-animations-for-gutenberg',
+			'simple_animations_for_gutenberg_main'
 		);
 	}
 
@@ -129,8 +129,8 @@ class AGB_Settings {
 			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 			<form action="options.php" method="post">
 				<?php
-				settings_fields( 'animate_gut_blocks_settings_group' );
-				do_settings_sections( 'animate-gut-blocks' );
+				settings_fields( 'simple_animations_for_gutenberg_settings_group' );
+				do_settings_sections( 'simple-animations-for-gutenberg' );
 				submit_button();
 				?>
 			</form>
@@ -142,7 +142,7 @@ class AGB_Settings {
 	 * Render main section description
 	 */
 	public static function render_main_section() {
-		echo '<p>' . esc_html__( 'Configurez les options par défaut pour les animations de blocs.', 'animate-gut-blocks' ) . '</p>';
+		echo '<p>' . esc_html__( 'Configurez les options par défaut pour les animations de blocs.', 'simple-animations-for-gutenberg' ) . '</p>';
 	}
 
 	/**
@@ -154,11 +154,11 @@ class AGB_Settings {
 		?>
 		<label>
 			<input type="checkbox" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[enabled_block_types][]" value="core" <?php checked( in_array( 'core', $enabled, true ) ); ?>>
-			<?php esc_html_e( 'Blocs WordPress Core', 'animate-gut-blocks' ); ?>
+			<?php esc_html_e( 'Blocs WordPress Core', 'simple-animations-for-gutenberg' ); ?>
 		</label><br>
 		<label>
 			<input type="checkbox" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[enabled_block_types][]" value="meta-box" <?php checked( in_array( 'meta-box', $enabled, true ) ); ?>>
-			<?php esc_html_e( 'Blocs Meta Box', 'animate-gut-blocks' ); ?>
+			<?php esc_html_e( 'Blocs Meta Box', 'simple-animations-for-gutenberg' ); ?>
 		</label>
 		<?php
 	}
@@ -171,7 +171,7 @@ class AGB_Settings {
 		$duration = $options['default_duration'] ?? 0.6;
 		?>
 		<input type="number" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[default_duration]" value="<?php echo esc_attr( $duration ); ?>" min="0.2" max="2" step="0.1">
-		<p class="description"><?php esc_html_e( 'Durée par défaut des animations en secondes (0.2 - 2)', 'animate-gut-blocks' ); ?></p>
+		<p class="description"><?php esc_html_e( 'Durée par défaut des animations en secondes (0.2 - 2)', 'simple-animations-for-gutenberg' ); ?></p>
 		<?php
 	}
 

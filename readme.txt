@@ -1,4 +1,4 @@
-=== Animate Gut Blocks ===
+=== Simple Animations for Gutenberg ===
 Contributors: valentingrenier
 Tags: gutenberg, blocks, animation, scroll, effects
 Requires at least: 5.8
@@ -12,7 +12,7 @@ Add beautiful scroll-triggered animations to any Gutenberg block with a simple, 
 
 == Description ==
 
-Animate Gut Blocks adds scroll-triggered animations to WordPress Gutenberg blocks without any coding required.
+Simple Animations for Gutenberg adds scroll-triggered animations to WordPress Gutenberg blocks without any coding required.
 
 **Features:**
 
@@ -29,7 +29,7 @@ Works with all WordPress core blocks and Meta Box blocks.
 
 == Installation ==
 
-1. Upload the plugin files to `/wp-content/plugins/animate-gut-blocks/`
+1. Upload the plugin files to `/wp-content/plugins/simple-animations-for-gutenberg/`
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Select any block in Gutenberg
 4. Open the block settings panel

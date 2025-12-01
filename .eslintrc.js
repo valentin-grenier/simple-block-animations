@@ -26,7 +26,7 @@ module.exports = {
 		'prefer-const': 'error',
 		'no-var': 'error',
 		'@wordpress/i18n-text-domain': ['error', {
-			allowedTextDomain: 'animate-gut-blocks',
+			allowedTextDomain: 'safg',
 		}],
 	},
 	settings: {

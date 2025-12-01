@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Handles block-related functionality
  */
-class AGB_Blocks {
+class SAFG_Blocks {
 
 	/**
 	 * Initialize hooks
@@ -66,11 +66,11 @@ class AGB_Blocks {
 	 */
 	public static function get_animation_types() {
 		return array(
-			'fade-in'       => __( 'Fondu', 'animate-gut-blocks' ),
-			'fade-in-up'    => __( 'Fondu - Bas vers haut', 'animate-gut-blocks' ),
-			'fade-in-down'  => __( 'Fondu - Haut vers bas', 'animate-gut-blocks' ),
-			'fade-in-left'  => __( 'Fondu - Gauche vers droite', 'animate-gut-blocks' ),
-			'fade-in-right' => __( 'Fondu - Droite vers gauche', 'animate-gut-blocks' ),
+			'fade-in'       => __( 'Fondu', 'simple-animations-for-gutenberg' ),
+			'fade-in-up'    => __( 'Fondu - Bas vers haut', 'simple-animations-for-gutenberg' ),
+			'fade-in-down'  => __( 'Fondu - Haut vers bas', 'simple-animations-for-gutenberg' ),
+			'fade-in-left'  => __( 'Fondu - Gauche vers droite', 'simple-animations-for-gutenberg' ),
+			'fade-in-right' => __( 'Fondu - Droite vers gauche', 'simple-animations-for-gutenberg' ),
 		);
 	}
 }

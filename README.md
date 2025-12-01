@@ -1,4 +1,4 @@
-# Animate Gut Blocks
+# Simple Animations for Gutenberg
 
 A lightweight WordPress plugin that brings your Gutenberg editor to life by adding beautiful scroll-triggered animations to any block.
 
@@ -9,7 +9,7 @@ A lightweight WordPress plugin that brings your Gutenberg editor to life by addi
 
 ## Description
 
-Animate Gut Blocks is perfect for creating engaging, modern websites with minimal effort. Add smooth scroll animations to your Gutenberg blocks without writing a single line of code.
+Simple Animations for Gutenberg is perfect for creating engaging, modern websites with minimal effort. Add smooth scroll animations to your Gutenberg blocks without writing a single line of code.
 
 ## Key Features
 
@@ -45,13 +45,13 @@ Animate Gut Blocks is perfect for creating engaging, modern websites with minima
 
    ```bash
    cd wp-content/plugins
-   git clone https://github.com/valentin-grenier/animate-gut-blocks.git
+   git clone https://github.com/valentin-grenier/simple-animations-for-gutenberg.git
    ```
 
 2. Install dependencies:
 
    ```bash
-   cd animate-gut-blocks
+   cd simple-animations-for-gutenberg
    composer install
    npm install
    ```
@@ -188,4 +188,4 @@ Developed by [Valentin Grenier](https://github.com/valentin-grenier) - Studio Va
 
 ## Support
 
-For issues, questions, or suggestions, please [open an issue](https://github.com/valentin-grenier/animate-gut-blocks/issues) on GitHub.
+For issues, questions, or suggestions, please [open an issue](https://github.com/valentin-grenier/simple-animations-for-gutenberg/issues) on GitHub.

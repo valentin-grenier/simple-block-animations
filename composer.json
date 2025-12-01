@@ -1,6 +1,6 @@
 {
-	"name": "animate-gut-blocks/animate-gut-blocks",
-	"description": "Add scroll animations to Gutenberg blocks",
+	"name": "simple-animations-for-gutenberg/simple-animations-for-gutenberg",
+	"description": "Add lightweight animations to Gutenberg blocks",
 	"type": "wordpress-plugin",
 	"license": "GPL-2.0-or-later",
 	"require-dev": {
