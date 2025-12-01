@@ -4,7 +4,7 @@
  * Plugin Name: Simple Animations for Gutenberg
  * Plugin URI: https://github.com/valentin-grenier/simple-animations-for-gutenberg
  * Description: Easily add animations to your Gutenberg blocks without coding.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 
  * Requires PHP: 
  * Tested up to: 6.8
