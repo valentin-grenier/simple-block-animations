@@ -2,7 +2,7 @@
 /**
  * Plugin settings management
  *
- * @package AGB
+ * @package SBA
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,12 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Handles plugin settings and options page
  */
-class SAFG_Settings {
+class SBA_Settings {
 
 	/**
 	 * Option name in database
 	 */
-	const OPTION_NAME = 'agb_settings';
+	const OPTION_NAME = 'sba_settings';
 
 	/**
 	 * Initialize hooks
@@ -32,10 +32,10 @@ class SAFG_Settings {
 	 */
 	public static function add_settings_page() {
 		add_options_page(
-			__( 'Block Animations Settings', 'simple-animations-for-gutenberg' ),
-			__( 'Block Animations', 'simple-animations-for-gutenberg' ),
+			__( 'Block Animations Settings', 'simple-block-animations' ),
+			__( 'Block Animations', 'simple-block-animations' ),
 			'manage_options',
-			'simple-animations-for-gutenberg',
+			'simple-block-animations',
 			array( __CLASS__, 'render_settings_page' )
 		);
 	}
@@ -45,7 +45,7 @@ class SAFG_Settings {
 	 */
 	public static function register_settings() {
 		register_setting(
-			'simple_animations_for_gutenberg_settings_group',
+			'simple_block_animations_settings_group',
 			self::OPTION_NAME,
 			array(
 				'type'              => 'array',
@@ -55,26 +55,26 @@ class SAFG_Settings {
 		);
 
 		add_settings_section(
-			'simple_animations_for_gutenberg_main',
-			__( 'Configuration générale', 'simple-animations-for-gutenberg' ),
+			'simple_block_animations_main',
+			__( 'Configuration générale', 'simple-block-animations' ),
 			array( __CLASS__, 'render_main_section' ),
-			'simple-animations-for-gutenberg'
+			'simple-block-animations'
 		);
 
 		add_settings_field(
 			'enabled_block_types',
-			__( 'Types de blocs supportés', 'simple-animations-for-gutenberg' ),
+			__( 'Types de blocs supportés', 'simple-block-animations' ),
 			array( __CLASS__, 'render_block_types_field' ),
-			'simple-animations-for-gutenberg',
-			'simple_animations_for_gutenberg_main'
+			'simple-block-animations',
+			'simple_block_animations_main'
 		);
 
 		add_settings_field(
 			'default_duration',
-			__( 'Durée par défaut', 'simple-animations-for-gutenberg' ),
+			__( 'Durée par défaut', 'simple-block-animations' ),
 			array( __CLASS__, 'render_default_duration_field' ),
-			'simple-animations-for-gutenberg',
-			'simple_animations_for_gutenberg_main'
+			'simple-block-animations',
+			'simple_block_animations_main'
 		);
 	}
 
@@ -129,8 +129,8 @@ class SAFG_Settings {
 			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 			<form action="options.php" method="post">
 				<?php
-				settings_fields( 'simple_animations_for_gutenberg_settings_group' );
-				do_settings_sections( 'simple-animations-for-gutenberg' );
+				settings_fields( 'simple_block_animations_settings_group' );
+				do_settings_sections( 'simple-block-animations' );
 				submit_button();
 				?>
 			</form>
@@ -142,7 +142,7 @@ class SAFG_Settings {
 	 * Render main section description
 	 */
 	public static function render_main_section() {
-		echo '<p>' . esc_html__( 'Configurez les options par défaut pour les animations de blocs.', 'simple-animations-for-gutenberg' ) . '</p>';
+		echo '<p>' . esc_html__( 'Configurez les options par défaut pour les animations de blocs.', 'simple-block-animations' ) . '</p>';
 	}
 
 	/**
@@ -154,11 +154,11 @@ class SAFG_Settings {
 		?>
 		<label>
 			<input type="checkbox" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[enabled_block_types][]" value="core" <?php checked( in_array( 'core', $enabled, true ) ); ?>>
-			<?php esc_html_e( 'Blocs WordPress Core', 'simple-animations-for-gutenberg' ); ?>
+			<?php esc_html_e( 'Blocs WordPress Core', 'simple-block-animations' ); ?>
 		</label><br>
 		<label>
 			<input type="checkbox" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[enabled_block_types][]" value="meta-box" <?php checked( in_array( 'meta-box', $enabled, true ) ); ?>>
-			<?php esc_html_e( 'Blocs Meta Box', 'simple-animations-for-gutenberg' ); ?>
+			<?php esc_html_e( 'Blocs Meta Box', 'simple-block-animations' ); ?>
 		</label>
 		<?php
 	}
@@ -171,7 +171,7 @@ class SAFG_Settings {
 		$duration = $options['default_duration'] ?? 0.6;
 		?>
 		<input type="number" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[default_duration]" value="<?php echo esc_attr( $duration ); ?>" min="0.2" max="2" step="0.1">
-		<p class="description"><?php esc_html_e( 'Durée par défaut des animations en secondes (0.2 - 2)', 'simple-animations-for-gutenberg' ); ?></p>
+		<p class="description"><?php esc_html_e( 'Durée par défaut des animations en secondes (0.2 - 2)', 'simple-block-animations' ); ?></p>
 		<?php
 	}
 

@@ -2,7 +2,7 @@
 /**
  * Block registration and management
  *
- * @package AGB
+ * @package SBA
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Handles block-related functionality
  */
-class SAFG_Blocks {
+class SBA_Blocks {
 
 	/**
 	 * Initialize hooks
@@ -66,11 +66,11 @@ class SAFG_Blocks {
 	 */
 	public static function get_animation_types() {
 		return array(
-			'fade-in'       => __( 'Fondu', 'simple-animations-for-gutenberg' ),
-			'fade-in-up'    => __( 'Fondu - Bas vers haut', 'simple-animations-for-gutenberg' ),
-			'fade-in-down'  => __( 'Fondu - Haut vers bas', 'simple-animations-for-gutenberg' ),
-			'fade-in-left'  => __( 'Fondu - Gauche vers droite', 'simple-animations-for-gutenberg' ),
-			'fade-in-right' => __( 'Fondu - Droite vers gauche', 'simple-animations-for-gutenberg' ),
+			'fade-in'       => __( 'Fondu', 'simple-block-animations' ),
+			'fade-in-up'    => __( 'Fondu - Bas vers haut', 'simple-block-animations' ),
+			'fade-in-down'  => __( 'Fondu - Haut vers bas', 'simple-block-animations' ),
+			'fade-in-left'  => __( 'Fondu - Gauche vers droite', 'simple-block-animations' ),
+			'fade-in-right' => __( 'Fondu - Droite vers gauche', 'simple-block-animations' ),
 		);
 	}
 }

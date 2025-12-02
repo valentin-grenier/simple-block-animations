@@ -7,8 +7,8 @@ import { PanelBody, ToggleControl, SelectControl, RangeControl } from '@wordpres
 import '../scss/editor.scss';
 
 // Prevent multiple executions
-if (!window.simpleAnimationsForGutenbergAttributesFiltersAdded) {
-	window.simpleAnimationsForGutenbergAttributesFiltersAdded = true;
+if (!window.simpleBlockAnimationsAttributesFiltersAdded) {
+	window.simpleBlockAnimationsAttributesFiltersAdded = true;
 
 	/**
 	 * Add animation attributes to all blocks starting with "core/"
@@ -66,54 +66,54 @@ if (!window.simpleAnimationsForGutenbergAttributesFiltersAdded) {
 					createElement(
 						PanelBody,
 						{
-							title: __('Animations', 'simple_animations_for_gutenberg'),
+							title: __('Animations', 'simple_block_animations'),
 							initialOpen: true,
 						},
-						createElement(ToggleControl, {
-							label: __('Animer le bloc', 'simple_animations_for_gutenberg'),
-							checked: isAnimated,
+					createElement(ToggleControl, {
+						label: __('Animer le bloc', 'simple_block_animations'),
+						checked: isAnimated,
 							onChange: (value) => {
 								setAttributes({ isAnimated: value });
 							},
 						}),
 						isAnimated &&
-							createElement(SelectControl, {
-								label: __("Type d'animation", 'simple_animations_for_gutenberg'),
-								value: animationType,
-								options: [
-									{ label: __('Fondu', 'simple_animations_for_gutenberg'), value: 'fade-in' },
-									{ label: __('Fondu - Bas vers haut', 'simple_animations_for_gutenberg'), value: 'fade-in-up' },
-									{ label: __('Fondu - Haut vers bas', 'simple_animations_for_gutenberg'), value: 'fade-in-down' },
-									{ label: __('Fondu - Gauche vers droite', 'simple_animations_for_gutenberg'), value: 'fade-in-left' },
-									{ label: __('Fondu - Droite vers gauche', 'simple_animations_for_gutenberg'), value: 'fade-in-right' },
-								],
+						createElement(SelectControl, {
+							label: __("Type d'animation", 'simple_block_animations'),
+							value: animationType,
+							options: [
+								{ label: __('Fondu', 'simple_block_animations'), value: 'fade-in' },
+								{ label: __('Fondu - Bas vers haut', 'simple_block_animations'), value: 'fade-in-up' },
+								{ label: __('Fondu - Haut vers bas', 'simple_block_animations'), value: 'fade-in-down' },
+								{ label: __('Fondu - Gauche vers droite', 'simple_block_animations'), value: 'fade-in-left' },
+								{ label: __('Fondu - Droite vers gauche', 'simple_block_animations'), value: 'fade-in-right' },
+							],
 								onChange: (value) => {
 									setAttributes({ animationType: value });
 								},
 							}),
 						isAnimated &&
-							createElement(RangeControl, {
-								label: __("Durée de l'animation", 'simple_animations_for_gutenberg'),
-								value: animationDuration,
-								onChange: (value) => {
-									setAttributes({ animationDuration: value });
-								},
-								min: 0.2,
-								max: 2,
-								step: 0.1,
-								help: __('Durée en secondes', 'simple_animations_for_gutenberg'),
+						createElement(RangeControl, {
+							label: __("Durée de l'animation", 'simple_block_animations'),
+							value: animationDuration,
+							onChange: (value) => {
+								setAttributes({ animationDuration: value });
+							},
+							min: 0.2,
+							max: 2,
+							step: 0.1,
+							help: __('Durée en secondes', 'simple_block_animations'),
 							}),
 						isAnimated &&
-							createElement(RangeControl, {
-								label: __("Délai de l'animation", 'simple_animations_for_gutenberg'),
-								value: animationDelay,
-								onChange: (value) => {
-									setAttributes({ animationDelay: value });
-								},
-								min: 0,
-								max: 1,
-								step: 0.1,
-								help: __('Durée en secondes', 'simple_animations_for_gutenberg'),
+						createElement(RangeControl, {
+							label: __("Délai de l'animation", 'simple_block_animations'),
+							value: animationDelay,
+							onChange: (value) => {
+								setAttributes({ animationDelay: value });
+							},
+							min: 0,
+							max: 1,
+							step: 0.1,
+							help: __('Durée en secondes', 'simple_block_animations'),
 							})
 					)
 				)
@@ -150,7 +150,7 @@ if (!window.simpleAnimationsForGutenbergAttributesFiltersAdded) {
 	}
 
 	// Apply filters
-	addFilter('blocks.registerBlockType', 'simple_animations_for_gutenberg/animation-attributes', addAnimationAttributes);
-	addFilter('editor.BlockEdit', 'simple_animations_for_gutenberg/with-animation-controls', withAnimationControls);
-	addFilter('blocks.getSaveContent.extraProps', 'simple_animations_for_gutenberg/add-animation-classes', addAnimationClasses);
+	addFilter('blocks.registerBlockType', 'simple_block_animations/animation-attributes', addAnimationAttributes);
+	addFilter('editor.BlockEdit', 'simple_block_animations/with-animation-controls', withAnimationControls);
+	addFilter('blocks.getSaveContent.extraProps', 'simple_block_animations/add-animation-classes', addAnimationClasses);
 }

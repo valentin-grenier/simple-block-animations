@@ -1,5 +1,5 @@
 {
-	"name": "simple-animations-for-gutenberg/simple-animations-for-gutenberg",
+	"name": "simple-block-animations/simple-block-animations",
 	"description": "Add lightweight animations to Gutenberg blocks",
 	"type": "wordpress-plugin",
 	"license": "GPL-2.0-or-later",

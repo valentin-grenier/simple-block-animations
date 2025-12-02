@@ -1,4 +1,4 @@
-# Simple Animations for Gutenberg
+# Simple block animations
 
 A lightweight WordPress plugin that brings your Gutenberg editor to life by adding beautiful scroll-triggered animations to any block.
 
@@ -9,7 +9,7 @@ A lightweight WordPress plugin that brings your Gutenberg editor to life by addi
 
 ## Description
 
-Simple Animations for Gutenberg is perfect for creating engaging, modern websites with minimal effort. Add smooth scroll animations to your Gutenberg blocks without writing a single line of code.
+Simple block animations is perfect for creating engaging, modern websites with minimal effort. Add smooth scroll animations to your Gutenberg blocks without writing a single line of code.
 
 ## Key Features
 
