@@ -1,0 +1,41 @@
+name: Update WordPress.org assets
+
+# Publie readme.txt et le dossier .wordpress-org/ (icône, bannière, blueprint de
+# la Live Preview) sur le SVN WordPress.org via l'action officielle 10up, sans
+# nouvelle version. Déclenché par un push sur main qui touche ces fichiers : le
+# merge d'une PR les met donc en ligne immédiatement.
+#
+# Un push fait par le GITHUB_TOKEN ne déclenche aucun workflow : le commit de bump
+# de release.yml ne lance donc pas celui-ci. Les assets partent alors avec le
+# déploiement de la Release.
+#
+# Secrets requis : SVN_USERNAME, SVN_PASSWORD (identifiants WordPress.org).
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - readme.txt
+      - .wordpress-org/**
+
+permissions:
+  contents: read
+
+jobs:
+  assets:
+    name: Push readme and assets to WordPress.org SVN
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # IGNORE_OTHER_FILES : seuls readme.txt et les assets partent sur le SVN,
+      # le code modifié depuis la dernière version attend la prochaine Release.
+      - name: Update readme and assets
+        uses: 10up/action-wordpress-plugin-asset-update@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: simple-block-animations
+          IGNORE_OTHER_FILES: true

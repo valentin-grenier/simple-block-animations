@@ -2,6 +2,7 @@
 /.git
 /.github
 /.claude
+/.wordpress-org
 .gitignore
 .distignore
 .eslintrc.js
