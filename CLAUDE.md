@@ -64,7 +64,7 @@ Secondary path: `.github/workflows/deploy.yml` deploys when a GitHub Release is
 published manually in the UI — but it does **not** bump versions.
 
 Readme and assets path: `.github/workflows/assets.yml` pushes `readme.txt` and
-`.wordpress-org/` (icon, banner, `blueprints/blueprint.json`) to the SVN on any push
+`.wordpress-org/` (icon, banner, screenshots, `blueprints/blueprint.json`) to the SVN on any push
 to `main` that touches them, without a new version. **Merging such a change publishes
 it immediately.** Only those files are sent (`IGNORE_OTHER_FILES`); code changes wait
 for the next release, whose deploy also syncs `.wordpress-org/`.
