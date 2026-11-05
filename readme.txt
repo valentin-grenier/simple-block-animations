@@ -71,10 +71,10 @@ No. Block attribute defaults are resolved when a block is inserted, so changing 
 
 == Screenshots ==
 
-1. Animation controls in the block inspector
-2. Animation type selector
-3. Duration and delay controls
-4. Example of fade-in animation
+1. Animation controls in the block settings sidebar
+2. The seven available animation types
+3. Animated blocks on the front end
+4. Default duration and delay settings
 
 == Changelog ==
 
