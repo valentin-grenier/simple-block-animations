@@ -5,7 +5,7 @@ Guidance for Claude Code when working in this repository.
 ## Project
 
 Simple Block Animations — a lightweight WordPress plugin that adds scroll-triggered
-animations (fade, slide up/down/left/right) to any Gutenberg block. It does not
+animations (fade, fade up/down/left/right, zoom in, slide up) to any Gutenberg block. It does not
 register its own blocks; it extends existing blocks with animation attributes from
 the block editor. The frontend triggers CSS animations via `IntersectionObserver`
 and respects `prefers-reduced-motion`.
@@ -63,6 +63,12 @@ which is also runnable locally (it edits the files without deploying).
 Secondary path: `.github/workflows/deploy.yml` deploys when a GitHub Release is
 published manually in the UI — but it does **not** bump versions.
 
+Readme and assets path: `.github/workflows/assets.yml` pushes `readme.txt` and
+`.wordpress-org/` (icon, banner, `blueprints/blueprint.json`) to the SVN on any push
+to `main` that touches them, without a new version. **Merging such a change publishes
+it immediately.** Only those files are sent (`IGNORE_OTHER_FILES`); code changes wait
+for the next release, whose deploy also syncs `.wordpress-org/`.
+
 The version is stored in 4 places, kept in sync by the bump script:
 - `simple-block-animations.php` — `Version:` header **and** `SIMPBLAN_VERSION` constant
 - `readme.txt` — `Stable tag:`
@@ -76,7 +82,10 @@ Gotchas:
   release tag. Use plain numeric tags (`2.0.8`, no `v` prefix).
 - `SVN_USERNAME` / `SVN_PASSWORD` are stored as repository secrets.
 - `.distignore` decides what ships to SVN (keeps `build/`; excludes `src/`, `bin/`,
-  `node_modules`, dev configs, docs).
+  `.wordpress-org/`, `node_modules`, dev configs, docs).
+- `blueprint.json` embeds serialized block markup. Regenerate it from the editor
+  (`wp.blocks.serialize()`) rather than editing it by hand, or blocks fail validation.
+  The Live Preview also has to be set to public in the plugin's Advanced tab.
 
 ## Conventions
 
