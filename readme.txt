@@ -4,7 +4,7 @@ Tags: gutenberg, blocks, animation, scroll, effects
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.1.0
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,9 @@ No. Block attribute defaults are resolved when a block is inserted, so changing 
 4. Example of fade-in animation
 
 == Changelog ==
+
+= 2.2.0 =
+* Changed: interface source strings are now in English; French moves to translate.wordpress.org
 
 = 2.1.0 =
 * Fixed: animations now load for dynamic blocks, block templates, template parts and synced patterns
