@@ -141,13 +141,13 @@ class SIMPBLAN_Blocks {
 	 */
 	public static function get_animation_types() {
 		return array(
-			'fade-in'       => __( 'Fondu', 'simple-block-animations' ),
-			'fade-in-up'    => __( 'Fondu - Bas vers haut', 'simple-block-animations' ),
-			'fade-in-down'  => __( 'Fondu - Haut vers bas', 'simple-block-animations' ),
-			'fade-in-left'  => __( 'Fondu - Gauche vers droite', 'simple-block-animations' ),
-			'fade-in-right' => __( 'Fondu - Droite vers gauche', 'simple-block-animations' ),
-			'zoom-in'       => __( 'Zoom avant', 'simple-block-animations' ),
-			'slide-up'      => __( 'Glissement vers le haut', 'simple-block-animations' ),
+			'fade-in'       => __( 'Fade in', 'simple-block-animations' ),
+			'fade-in-up'    => __( 'Fade in up', 'simple-block-animations' ),
+			'fade-in-down'  => __( 'Fade in down', 'simple-block-animations' ),
+			'fade-in-left'  => __( 'Fade in left', 'simple-block-animations' ),
+			'fade-in-right' => __( 'Fade in right', 'simple-block-animations' ),
+			'zoom-in'       => __( 'Zoom in', 'simple-block-animations' ),
+			'slide-up'      => __( 'Slide up', 'simple-block-animations' ),
 		);
 	}
 }
