@@ -108,7 +108,7 @@ if ( ! window.simpleBlockAnimationsAttributesFiltersAdded ) {
 						},
 						createElement( ToggleControl, {
 							label: __(
-								'Animer le bloc',
+								'Animate this block',
 								'simple-block-animations'
 							),
 							checked: isAnimated,
@@ -119,56 +119,56 @@ if ( ! window.simpleBlockAnimationsAttributesFiltersAdded ) {
 						isAnimated &&
 							createElement( SelectControl, {
 								label: __(
-									"Type d'animation",
+									'Animation type',
 									'simple-block-animations'
 								),
 								value: animationType,
 								options: [
 									{
 										label: __(
-											'Fondu',
+											'Fade in',
 											'simple-block-animations'
 										),
 										value: 'fade-in',
 									},
 									{
 										label: __(
-											'Fondu - Bas vers haut',
+											'Fade in up',
 											'simple-block-animations'
 										),
 										value: 'fade-in-up',
 									},
 									{
 										label: __(
-											'Fondu - Haut vers bas',
+											'Fade in down',
 											'simple-block-animations'
 										),
 										value: 'fade-in-down',
 									},
 									{
 										label: __(
-											'Fondu - Gauche vers droite',
+											'Fade in left',
 											'simple-block-animations'
 										),
 										value: 'fade-in-left',
 									},
 									{
 										label: __(
-											'Fondu - Droite vers gauche',
+											'Fade in right',
 											'simple-block-animations'
 										),
 										value: 'fade-in-right',
 									},
 									{
 										label: __(
-											'Zoom avant',
+											'Zoom in',
 											'simple-block-animations'
 										),
 										value: 'zoom-in',
 									},
 									{
 										label: __(
-											'Glissement vers le haut',
+											'Slide up',
 											'simple-block-animations'
 										),
 										value: 'slide-up',
@@ -181,7 +181,7 @@ if ( ! window.simpleBlockAnimationsAttributesFiltersAdded ) {
 						isAnimated &&
 							createElement( RangeControl, {
 								label: __(
-									"Durée de l'animation",
+									'Animation duration',
 									'simple-block-animations'
 								),
 								value: animationDuration,
@@ -194,14 +194,14 @@ if ( ! window.simpleBlockAnimationsAttributesFiltersAdded ) {
 								max: 2,
 								step: 0.1,
 								help: __(
-									'Durée en secondes',
+									'Duration in seconds',
 									'simple-block-animations'
 								),
 							} ),
 						isAnimated &&
 							createElement( RangeControl, {
 								label: __(
-									"Délai de l'animation",
+									'Animation delay',
 									'simple-block-animations'
 								),
 								value: animationDelay,
@@ -212,7 +212,7 @@ if ( ! window.simpleBlockAnimationsAttributesFiltersAdded ) {
 								max: 1,
 								step: 0.1,
 								help: __(
-									'Durée en secondes',
+									'Delay in seconds',
 									'simple-block-animations'
 								),
 							} )

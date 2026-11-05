@@ -56,14 +56,14 @@ class SIMPBLAN_Settings {
 
 		add_settings_section(
 			'simpblan_main',
-			__( 'Configuration générale', 'simple-block-animations' ),
+			__( 'General settings', 'simple-block-animations' ),
 			array( __CLASS__, 'render_main_section' ),
 			'simple-block-animations'
 		);
 
 		add_settings_field(
 			'default_duration',
-			__( 'Durée par défaut', 'simple-block-animations' ),
+			__( 'Default duration', 'simple-block-animations' ),
 			array( __CLASS__, 'render_default_duration_field' ),
 			'simple-block-animations',
 			'simpblan_main'
@@ -71,7 +71,7 @@ class SIMPBLAN_Settings {
 
 		add_settings_field(
 			'default_delay',
-			__( 'Délai par défaut', 'simple-block-animations' ),
+			__( 'Default delay', 'simple-block-animations' ),
 			array( __CLASS__, 'render_default_delay_field' ),
 			'simple-block-animations',
 			'simpblan_main'
@@ -137,7 +137,7 @@ class SIMPBLAN_Settings {
 	 * Render main section description
 	 */
 	public static function render_main_section() {
-		echo '<p>' . esc_html__( 'Configurez les options par défaut pour les animations de blocs. Les animations sont maintenant supportées pour tous les types de blocs.', 'simple-block-animations' ) . '</p>';
+		echo '<p>' . esc_html__( 'Set the default options for block animations. Animations are supported on all block types.', 'simple-block-animations' ) . '</p>';
 	}
 
 	/**
@@ -148,7 +148,7 @@ class SIMPBLAN_Settings {
 		$duration = $options['default_duration'] ?? 0.6;
 		?>
 		<input type="number" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[default_duration]" value="<?php echo esc_attr( $duration ); ?>" min="0.2" max="2" step="0.1">
-		<p class="description"><?php esc_html_e( 'Durée par défaut des animations en secondes (0.2 - 2)', 'simple-block-animations' ); ?></p>
+		<p class="description"><?php esc_html_e( 'Default animation duration in seconds (0.2 - 2)', 'simple-block-animations' ); ?></p>
 		<?php
 	}
 
@@ -160,7 +160,7 @@ class SIMPBLAN_Settings {
 		$delay   = $options['default_delay'] ?? 0;
 		?>
 		<input type="number" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[default_delay]" value="<?php echo esc_attr( $delay ); ?>" min="0" max="1" step="0.1">
-		<p class="description"><?php esc_html_e( 'Délai par défaut avant le déclenchement, en secondes (0 - 1)', 'simple-block-animations' ); ?></p>
+		<p class="description"><?php esc_html_e( 'Default delay before the animation starts, in seconds (0 - 1)', 'simple-block-animations' ); ?></p>
 		<?php
 	}
 
