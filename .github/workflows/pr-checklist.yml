@@ -1,0 +1,28 @@
+# wp-aidd-version: 0.7.0
+name: PR Checklist
+
+# Runs .github/scripts/check-pr-body.sh on the PR description, the same script the
+# git-open-pr skill runs before creating the PR. Re-runs when the description is edited.
+# Job name stays "Checklist complete": it is a required status check.
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  checklist:
+    name: Checklist complete
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false && github.actor != 'dependabot[bot]'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: .github/scripts
+      - name: Check the pull request description
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: printf '%s\n' "$PR_BODY" | bash .github/scripts/check-pr-body.sh --ticked -
