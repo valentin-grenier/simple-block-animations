@@ -2,8 +2,8 @@
 
 A lightweight WordPress plugin that brings your Gutenberg editor to life by adding beautiful scroll-triggered animations to any block.
 
-![WordPress Plugin Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![WordPress Compatibility](https://img.shields.io/badge/wordpress-5.8%2B-blue.svg)
+![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/simple-block-animations.svg)
+![WordPress Compatibility](https://img.shields.io/badge/wordpress-6.2%2B-blue.svg)
 ![PHP Version](https://img.shields.io/badge/php-7.4%2B-purple.svg)
 ![License](https://img.shields.io/badge/license-GPLv2%2B-green.svg)
 
@@ -14,7 +14,7 @@ Simple block animations is perfect for creating engaging, modern websites with m
 ## Key Features
 
 * **No Coding Required** - Add animations directly from the block inspector panel
-* **Multiple Animation Types** - Choose from fade-in, slide-up, slide-down, slide-left, and slide-right effects
+* **Multiple Animation Types** - Choose from fade in, fade in up/down/left/right, zoom in and slide up effects
 * **Customizable Settings** - Control animation duration and delay for each block
 * **Scroll Trigger** - Animations activate when blocks enter the viewport
 * **Performance Optimized** - Lightweight JavaScript with Intersection Observer API
@@ -28,6 +28,8 @@ Simple block animations is perfect for creating engaging, modern websites with m
 * Fade In Down (slide from top)
 * Fade In Left (slide from left)
 * Fade In Right (slide from right)
+* Zoom In
+* Slide Up
 
 ## Installation
 
@@ -106,12 +108,14 @@ You can configure custom blocks to have animations enabled by default by adding 
 - `fade-in-down`
 - `fade-in-left`
 - `fade-in-right`
+- `zoom-in`
+- `slide-up`
 
 When these attributes are defined in your block.json, the Simple Block Animations plugin will respect them and automatically enable animations with your specified defaults when the block is inserted. This saves developers from having to manually configure animations for each block instance.
 
 ## How It Works
 
-The plugin uses the modern Intersection Observer API to detect when blocks enter the viewport, ensuring smooth performance even on content-heavy pages. It adds data attributes to animated blocks and applies CSS animations with GPU acceleration for smooth performance.
+The plugin uses the modern Intersection Observer API to detect when blocks enter the viewport, ensuring smooth performance even on content-heavy pages. It adds an animation class, CSS custom properties and a `data-animation` attribute to animated blocks, then plays CSS transitions on `opacity` and `transform`. Visitors who ask for reduced motion (`prefers-reduced-motion`) see the content without animation.
 
 ## Perfect For
 
@@ -125,11 +129,11 @@ The plugin uses the modern Intersection Observer API to detect when blocks enter
 
 ### Does this plugin work with all blocks?
 
-The plugin currently supports all WordPress core blocks and Meta Box blocks. Support for third-party block plugins may vary.
+Yes. The plugin works with all WordPress blocks, including core blocks, third-party blocks, and custom blocks.
 
 ### Will this slow down my website?
 
-No! The plugin is optimized for performance. It uses the native Intersection Observer API and only loads minimal JavaScript and CSS on the frontend.
+No! The plugin is optimized for performance. It uses the native Intersection Observer API, and the frontend script and stylesheet are only enqueued on pages that render an animated block.
 
 ### Can I customize the animation timing?
 
@@ -156,15 +160,15 @@ Yes! The plugin automatically handles animations for all blocks, including custo
 * Uses WordPress hooks and filters for block modification
 * Leverages the Intersection Observer API for efficient scroll detection
 * Automatically adds animation classes, styles, and data attributes to all blocks
-* CSS animations with GPU acceleration for smooth performance
-* Compatible with WordPress 5.8 and higher
+* CSS transitions on `opacity` and `transform`
+* Compatible with WordPress 6.2 and higher (uses `WP_HTML_Tag_Processor`)
 * Works seamlessly with dynamic blocks via the render_block filter
 
 ## Development
 
 ### Requirements
 
-* WordPress 5.8 or higher
+* WordPress 6.2 or higher
 * PHP 7.4 or higher
 * Node.js and npm
 * Composer
@@ -179,11 +183,12 @@ composer install
 # Build for production
 npm run build
 
-# Build for development (with source maps)
+# Build for development (watch mode, with source maps)
 npm run dev
 
-# Watch for changes
-npm run watch
+# Lint JavaScript and styles
+npm run lint:js
+npm run lint:css
 ```
 
 ### Code Standards
@@ -200,14 +205,7 @@ composer phpcbf
 
 ## Changelog
 
-### 1.0.0
-
-* Initial release
-* Support for 5 animation types
-* Block-level animation controls
-* Customizable duration and delay
-* Settings page for default configuration
-* Intersection Observer for scroll detection
+See the `== Changelog ==` section of [readme.txt](readme.txt).
 
 ## Contributing
 
