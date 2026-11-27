@@ -49,6 +49,9 @@ entries declared in `webpack.config.js`):
 - `npm run lint:js` / `npm run lint:css` / `npm run format` — JS/CSS lint & format.
 - `composer phpcs` / `composer phpcbf` — PHP coding standards (WPCS).
 
+The same checks (`composer phpcs`, `lint:js`, `lint:css`, `build`) run on every pull
+request and on `main` through `.github/workflows/ci.yml`. That workflow deploys nothing.
+
 ## Releasing to WordPress.org
 
 Deployment is automated through GitHub Actions — **do not run the SVN deploy by hand**.
