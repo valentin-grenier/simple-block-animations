@@ -117,32 +117,60 @@ class SIMPBLAN_Enqueue {
 	}
 
 	/**
+	 * Build the selector of the initial hidden state for one animation type
+	 *
+	 * It requires both the class and the data attribute that SIMPBLAN_Blocks adds at
+	 * render time, so an element from a theme or another plugin that merely carries a
+	 * class containing "animate-" is never hidden.
+	 *
+	 * @param string $type Animation type.
+	 * @return string CSS selector.
+	 */
+	private static function get_initial_state_selector( $type ) {
+		return sprintf(
+			'html.simpblan-js .animate-%1$s[data-animation="%1$s"]:not(.is-visible)',
+			$type
+		);
+	}
+
+	/**
 	 * Print the initial hidden state in the head
 	 *
 	 * Blocks are rendered after wp_head, so the stylesheet enqueued at render time lands
 	 * in the footer. Without this, an animated block would paint visible before being
 	 * hidden. The rules are gated behind a class set by the inline script below, so a
-	 * visitor without JavaScript never gets stuck on hidden content.
+	 * visitor without JavaScript never gets stuck on hidden content. The same script
+	 * removes the class on window load when frontend.js has not flagged itself as running.
 	 */
 	public static function print_initial_state() {
-		$css = 'html.simpblan-js [class*="animate-"]:not(.is-visible){opacity:0}';
+		$selectors = array();
+
+		foreach ( array_keys( SIMPBLAN_Blocks::get_animation_types() ) as $type ) {
+			$selectors[ $type ] = self::get_initial_state_selector( $type );
+		}
+
+		$all = implode( ',', $selectors );
+		$css = $all . '{opacity:0}';
 
 		foreach ( self::$initial_transforms as $type => $transform ) {
-			$css .= sprintf(
-				'html.simpblan-js .animate-%s:not(.is-visible){transform:%s}',
-				$type,
-				$transform
-			);
+			if ( isset( $selectors[ $type ] ) ) {
+				$css .= sprintf( '%s{transform:%s}', $selectors[ $type ], $transform );
+			}
 		}
 
 		// Same specificity as the rules above, so source order settles it.
-		$css .= '@media(prefers-reduced-motion:reduce){html.simpblan-js [class*="animate-"]:not(.is-visible){opacity:1;transform:none}}';
+		$css .= '@media(prefers-reduced-motion:reduce){' . $all . '{opacity:1;transform:none}}';
 
 		printf(
 			'<style id="simpblan-initial-state">%s</style>',
-			$css // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static CSS built from a hardcoded map.
+			$css // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static CSS built from hardcoded maps.
 		);
 
-		wp_print_inline_script_tag( "document.documentElement.className+=' simpblan-js';" );
+		// Safety net: if the frontend script has not run by the time the page has loaded
+		// (blocked, failed, or no IntersectionObserver), drop the class so content shows.
+		wp_print_inline_script_tag(
+			"document.documentElement.className+=' simpblan-js';" .
+			"window.addEventListener('load',function(){if(!window.simpblanReady){document.documentElement.classList.remove('simpblan-js');}});"
+		);
 	}
 }
