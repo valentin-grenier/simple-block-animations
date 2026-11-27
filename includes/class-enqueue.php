@@ -139,7 +139,8 @@ class SIMPBLAN_Enqueue {
 	 * Blocks are rendered after wp_head, so the stylesheet enqueued at render time lands
 	 * in the footer. Without this, an animated block would paint visible before being
 	 * hidden. The rules are gated behind a class set by the inline script below, so a
-	 * visitor without JavaScript never gets stuck on hidden content.
+	 * visitor without JavaScript never gets stuck on hidden content. The same script
+	 * removes the class on window load when frontend.js has not flagged itself as running.
 	 */
 	public static function print_initial_state() {
 		$selectors = array();
@@ -165,6 +166,11 @@ class SIMPBLAN_Enqueue {
 			$css // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static CSS built from hardcoded maps.
 		);
 
-		wp_print_inline_script_tag( "document.documentElement.className+=' simpblan-js';" );
+		// Safety net: if the frontend script has not run by the time the page has loaded
+		// (blocked, failed, or no IntersectionObserver), drop the class so content shows.
+		wp_print_inline_script_tag(
+			"document.documentElement.className+=' simpblan-js';" .
+			"window.addEventListener('load',function(){if(!window.simpblanReady){document.documentElement.classList.remove('simpblan-js');}});"
+		);
 	}
 }

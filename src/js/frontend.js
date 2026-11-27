@@ -16,7 +16,18 @@ const SELECTOR = TYPES.map(
 	( type ) => `.animate-${ type }[data-animation="${ type }"]`
 ).join( ',' );
 
+// Tells the inline head script that this file runs and can reveal the blocks.
+// Without the flag, that script removes the hidden initial state on window load.
+const isSupported = 'IntersectionObserver' in window;
+if ( isSupported ) {
+	window.simpblanReady = true;
+}
+
 function initAnimations() {
+	if ( ! isSupported ) {
+		return;
+	}
+
 	const animatedBlocks = document.querySelectorAll( SELECTOR );
 	if ( ! animatedBlocks.length ) {
 		return;
