@@ -78,17 +78,21 @@ if ( ! window.simpleBlockAnimationsAttributesFiltersAdded ) {
 	const withAnimationControls = createHigherOrderComponent( ( BlockEdit ) => {
 		return ( props ) => {
 			const { attributes, setAttributes } = props;
+
+			// Skip if attributes are not available (edge case for some blocks)
+			if (
+				! attributes ||
+				typeof attributes.isAnimated === 'undefined'
+			) {
+				return createElement( BlockEdit, props );
+			}
+
 			const {
 				isAnimated,
 				animationType,
 				animationDuration,
 				animationDelay,
 			} = attributes;
-
-			// Skip if attributes are not available (edge case for some blocks)
-			if ( ! attributes || typeof isAnimated === 'undefined' ) {
-				return createElement( BlockEdit, props );
-			}
 
 			return createElement(
 				Fragment,

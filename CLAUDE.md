@@ -17,7 +17,7 @@ and respects `prefers-reduced-motion`.
 
 PHP runtime (`includes/`, prefix `SIMPBLAN_` / `simpblan_`):
 - `simple-block-animations.php` — bootstrap: defines `SIMPBLAN_VERSION` and paths,
-  requires the classes, wires `plugins_loaded` + activation/deactivation hooks.
+  requires the classes, wires `plugins_loaded` + the activation hook.
 - `includes/class-enqueue.php` (`SIMPBLAN_Enqueue`) — enqueues the editor assets and
   *registers* the frontend ones from `build/`. The frontend assets are enqueued on
   demand by `SIMPBLAN_Blocks` when an animated block actually renders, so dynamic
